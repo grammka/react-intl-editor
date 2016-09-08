@@ -2,3 +2,6 @@
 *.log
 
 node_modules
+
+translations/changed/*.json
+translations/merged/*.json
