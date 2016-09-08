@@ -1,0 +1,13 @@
+$styles = primary success info warning danger
+$colors = #167bd4 #46d600 #299afb #ffa319 #ff2e4e
+
+
+for style, index in $styles
+  $color = $colors[index]
+  .{style}
+    background-color $color
+    color darken($color, 70%)
+    &:hover
+      background-color darken($colors[index], 5%)
+    &:active
+      background-color darken($colors[index], 10%)

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "notifications.templates.users_like_video",
+    "defaultMessage": "{user} and {more} likes the video {videoName}",
+    "message": ""
+  },
+  {
+    "id": "notifications.templates.users_like_video.more",
+    "defaultMessage": "{count} more",
+    "message": ""
+  },
+  {
+    "id": "app.components.CoverEditor.save",
+    "defaultMessage": "Save",
+    "message": ""
+  },
+  {
+    "id": "app.components.CoverEditor.cancel",
+    "defaultMessage": "Cancel",
+    "message": ""
+  }
+]

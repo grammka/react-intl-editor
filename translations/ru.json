@@ -1,0 +1,18 @@
+[
+  {
+    "id": "notifications.templates.users_like_video",
+    "message": "{user} и еще {more} понравилось видео {videoName}"
+  },
+  {
+    "id": "notifications.templates.users_like_video.more",
+    "message": "еще {count}"
+  },
+  {
+    "id": "app.components.CoverEditor.save",
+    "message": "Сохранить"
+  },
+  {
+    "id": "app.components.CoverEditor.cancel",
+    "message": "Отмена"
+  }
+]

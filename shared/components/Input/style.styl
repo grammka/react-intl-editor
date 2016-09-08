@@ -1,0 +1,42 @@
+.root
+  position: relative
+  background-color: #fff
+  border 1px solid #DCDFE6
+  &.errored
+    border-color $color_red
+
+.input
+  width: 100%
+  background none
+  border 0
+  font-family: PTSans-Regular
+  text-align: inherit
+  border-radius 2px
+  // TODO placeholder doesn't change. Check on Messages page in New Message textarea
+  +input-placeholder()
+    font-family: PTSans-Regular
+    font-size: 16px
+    color: #80838C
+  .h30 &
+    height: 30px
+    padding 0 8px
+    font-size: 13px
+  .h40 &
+    height: 40px
+    padding 0 12px
+    font-size: 14px
+  .h50 &
+    height: 50px
+    padding 0 15px
+    font-size: 17px
+  &:focus
+    border-color #6F8BC2
+  &.disabled,
+  &[disabled]
+    background-color #ddd
+    border-color #ccc
+
+textarea.input
+  line-height: 18px
+  padding 8px 12px
+  font-size: 14px
