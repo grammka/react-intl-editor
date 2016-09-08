@@ -1,14 +1,21 @@
 import path from 'path'
 import express from 'express'
+import bodyParser from 'body-parser'
 import webpack from 'webpack'
 import webpackMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../../webpack'
 
+import saveChangedMessage from './saveChangedMessage'
+
 
 const isDeveloping = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
 const app = express()
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
 if (isDeveloping) {
@@ -31,6 +38,13 @@ if (isDeveloping) {
 else {
   app.use(express.static(path.resolve(__dirname, '../../build')))
 }
+
+app.post('/save', (req, res) => {
+  saveChangedMessage(req.body.messages)
+
+  res.json({ ok: true })
+})
+
 
 app.listen(port, '0.0.0.0', (err) => {
   if (err) {

@@ -1,17 +1,66 @@
+$footer-height = 50px
+$border-color = #babdc1
+
+
+.content
+  fixed top 0 left 0 right 0 bottom $footer-height
+  overflow-x: hidden
+  overflow-y: auto
+
 .table
   width: 100%
   border-collapse collapse
-  border-top 1px solid #babdc1
   text-align: left
   font-size: 14px
   th
   td
-    padding 15px 20px
-    border-left 1px solid #babdc1
-    border-right 1px solid #babdc1
-    border-bottom 1px solid #babdc1
+    border-left 1px solid $border-color
+    border-right 1px solid $border-color
+    border-bottom 1px solid $border-color
+    vertical-align top
     text-align: left
   th
     padding 10px 20px
-    border-bottom 1px solid #babdc1
+    border-bottom 3px solid $border-color
     font-size: 20px
+    font-weight: bold
+  tr
+    &:last-child
+      td
+        border-bottom: 0
+  td
+    &:first-child
+    	padding 10px
+
+.idContainer
+  position: relative
+  cursor: default
+  &:hover
+    .hiddenId
+      display: block
+
+.ellipsis
+  text-align: center
+
+.hiddenId
+  display: none
+  background-color: #fff
+  border-right 1px solid $border-color
+  padding 10px
+  absolute top 0 left 0
+  z-index: 10
+  font-weight: 600
+
+.text
+  padding 10px 15px
+
+.textarea
+  border 0 !important
+
+
+
+.footer
+  height: $footer-height
+  padding 5px 20px
+  border-top 3px solid $border-color
+  fixed bottom 0 left 0 right 0

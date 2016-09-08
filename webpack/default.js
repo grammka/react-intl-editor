@@ -43,7 +43,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Quiz, please, rate this!',
+      title: 'Intl editor',
       template: `!!handlebars!${ path.join(paths.base, 'client/assets/index.html') }`,
       filename: 'index.html',
       hash: false,

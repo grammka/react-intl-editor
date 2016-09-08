@@ -1,18 +1,74 @@
 [
   {
-    "id": "notifications.templates.users_like_video",
-    "message": "{user} и еще {more} понравилось видео {videoName}"
+    "id": "app.containers.Watch.VideoContainer.ProgramGuide.Item.time",
+    "message": "{start, time, short} - {end, time, short}"
   },
   {
-    "id": "notifications.templates.users_like_video.more",
-    "message": "еще {count}"
+    "id": "app.components.SearchOverlay.inputPlaceholder",
+    "message": "Что искать... (минимум 3 символа)"
   },
   {
-    "id": "app.components.CoverEditor.save",
-    "message": "Сохранить"
+    "id": "app.components.SearchOverlay.submitButton",
+    "message": "Искать"
   },
   {
-    "id": "app.components.CoverEditor.cancel",
-    "message": "Отмена"
+    "id": "app.components.SearchOverlay.all",
+    "message": "Все"
+  },
+  {
+    "id": "app.components.SearchOverlay.videosTitle",
+    "message": "Видео"
+  },
+  {
+    "id": "app.components.SearchOverlay.channelsTitle",
+    "message": "Каналы"
+  },
+  {
+    "id": "app.components.SearchOverlay.usersTitle",
+    "message": "Пользователи"
+  },
+  {
+    "id": "app.components.SearchOverlay.tooSmallQuery",
+    "message": "Для поиска введите запрос не менее 3 символов"
+  },
+  {
+    "id": "app.components.SearchOverlay.noResults",
+    "message": "Результаты отсутствуют"
+  },
+  {
+    "id": "app.components.SearchOverlay.showMore",
+    "message": "Показать еще"
+  },
+  {
+    "id": "app.components.SocialLinks.label",
+    "message": "Социальные сети"
+  },
+  {
+    "id": "app.components.SubscribeToggle.subscribe",
+    "message": "Подписаться"
+  },
+  {
+    "id": "app.components.SubscribeToggle.subscribed",
+    "message": "Уже подписан"
+  },
+  {
+    "id": "app.components.SubscribeToggle.cancel",
+    "message": "Отписаться"
+  },
+  {
+    "id": "app.components.UserCard.Common.sendMessage",
+    "message": "Сообщение"
+  },
+  {
+    "id": "app.components.UserCard.Request.Income.accept",
+    "message": "Принять"
+  },
+  {
+    "id": "app.components.UserCard.Request.Income.reject",
+    "message": "Отказать"
+  },
+  {
+    "id": "app.components.UserCard.Request.Outcome.cancelRequest",
+    "message": "Отменить"
   }
 ]

@@ -1,11 +1,15 @@
 import React from 'react'
 import actions from 'core/actions'
 import { connect } from 'react-redux'
+import { Flex, Box } from 'reflexbox'
+import ValueLink from 'valuelink'
 
 import CSSModules from 'react-css-modules'
 import style from './style'
 
 import Indent from 'components/Indent'
+import Input from 'components/Input'
+import Button from '@wombocompo/button'
 
 const locales = [ 'en', 'ru' ]
 
@@ -15,6 +19,16 @@ const locales = [ 'en', 'ru' ]
 }))
 @CSSModules(style)
 export default class Home extends React.Component {
+  constructor(props) {
+    super()
+
+    this.changedMessages = {}
+
+    this.state = {
+      messages: null
+    }
+  }
+
   async componentWillMount() {
     let result = await Promise.all(
       locales.map((locale) => new Promise((fulfill) => {
@@ -50,41 +64,95 @@ export default class Home extends React.Component {
       })
     }
 
-    actions.lang.setMessages(messages)
+    this.initMessages = { ...messages }
+
+    this.setState({
+      messages
+    })
+  }
+
+
+  addDirty = ({ id, locale, message }) => {
+    if (!this.changedMessages[id]) {
+      this.changedMessages[id] = {}
+    }
+
+    this.changedMessages[id][locale] = { newMessage: message }
+  }
+
+  save = () => {
+    for (const id in this.changedMessages) {
+      for (const locale in this.changedMessages[id]) {
+        this.changedMessages[id][locale].message = this.initMessages[id].locales[locale].message
+      }
+    }
+
+    const result = {}
+
+    for (const id in this.changedMessages) {
+      for (const locale in this.changedMessages[id]) {
+        if (!result[locale]) {
+          result[locale] = {}
+        }
+
+        result[locale][id] = this.changedMessages[id][locale]
+      }
+    }
+
+    actions.lang.save({
+      body: {
+        messages: result
+      },
+      onResponse: ({ body }) => {
+        console.log(4444, body)
+      }
+    })
   }
 
 
   render() {
-    const { messages } = this.props
+    const { messages } = this.state
 
 
     return messages && (
-      <Indent p={30}>
-        <table styleName="table">
-          <thead>
+      <div>
+        <div styleName="content">
+          <table styleName="table">
+            <thead>
             <tr>
-              <th>ID</th>
+              <th width="1%">ID</th>
               {
                 locales.map((locale) => (
                   <th key={locale}>{locale}</th>
                 ))
               }
             </tr>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
             {
               Object.keys(messages).map((messageId) => {
                 const { defaultMessage, locales } = messages[messageId]
 
                 return (
                   <tr key={messageId}>
-                    <td>{messageId}</td>
+                    <td styleName="idContainer">
+                      <div styleName="hiddenId">{messageId}</div>
+                      <div styleName="ellipsis">{'...'}</div>
+                    </td>
                     {
                       Object.keys(locales).map((locale) => {
-                        const { message } = locales[locale]
+                        const messageLink = ValueLink.state(this, 'messages').at(messageId).at('locales').at(locale).at('message')
 
                         return (
-                          <td key={locale}>{message}</td>
+                          <td key={locale}>
+                            <Input
+                              styleName="textarea"
+                              type="text"
+                              multiline
+                              valueLink={ messageLink }
+                              onBlur={() => this.addDirty({ id: messageId, locale, message: messageLink.value })}
+                            />
+                          </td>
                         )
                       })
                     }
@@ -92,9 +160,17 @@ export default class Home extends React.Component {
                 )
               })
             }
-          </tbody>
-        </table>
-      </Indent>
+            </tbody>
+          </table>
+        </div>
+        <div styleName="footer">
+          <Flex justify="flex-end" align="center">
+            <Box>
+              <Button success h={37} onClick={this.save}>{'Save'}</Button>
+            </Box>
+          </Flex>
+        </div>
+      </div>
     )
   }
 }

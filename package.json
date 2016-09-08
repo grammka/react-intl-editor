@@ -23,10 +23,13 @@
     "clean": "rimraf build",
     "build": "npm run clean && cross-env DEBUG=app:* NODE_ENV=development CONFIG=development node ./bin/compile",
     "build:prod": "npm run clean && cross-env DEBUG=app:* NODE_ENV=production CONFIG=production node ./bin/compile",
-    "start:prod": "cross-env NODE_ENV=production CONFIG=production node ./bin/server"
+    "start:prod": "cross-env NODE_ENV=production CONFIG=production node ./bin/server",
+    "mergei18n": "node ./bin/mergei18n"
   },
   "dependencies": {
     "@wombocompo/button": "^1.1.2",
+    "autosize": "^3.0.17",
+    "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.3.1",
@@ -57,6 +60,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "glob": "^7.0.6",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.3.0",
     "html-webpack-plugin": "^2.22.0",

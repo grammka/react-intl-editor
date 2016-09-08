@@ -2,41 +2,97 @@
   position: relative
   background-color: #fff
   border 1px solid #DCDFE6
+  &.noBorder
+    border 0 !important
   &.errored
-    border-color $color_red
+    border-color $color_red_2
 
 .input
   width: 100%
   background none
   border 0
-  font-family: PTSans-Regular
-  text-align: inherit
+  vertical-align top
+  font-family: 'PT Sans'
   border-radius 2px
   // TODO placeholder doesn't change. Check on Messages page in New Message textarea
   +input-placeholder()
-    font-family: PTSans-Regular
+    font-family: 'PT Sans'
     font-size: 16px
     color: #80838C
-  .h30 &
-    height: 30px
-    padding 0 8px
-    font-size: 13px
   .h40 &
-    height: 40px
-    padding 0 12px
+    line-height: 14px
+    padding 11px 12px
     font-size: 14px
   .h50 &
     height: 50px
-    padding 0 15px
+    line-height: 18px
+    padding 10px 17px
     font-size: 17px
+    &.labelExist
+      padding-top: 22px
   &:focus
     border-color #6F8BC2
   &.disabled,
   &[disabled]
     background-color #ddd
     border-color #ccc
+  &:focus,
+  &.filled
+    & ~ .label
+      color: #4064C7
+      .h40 &
+        margin-top: 0
+        font-size: 9px
+      .h50 &
+        margin-top: -22px
+        font-size: 10px
 
 textarea.input
   line-height: 18px
-  padding 8px 12px
+  padding 10px 12px 8px
   font-size: 14px
+
+.label
+  height: 20px
+  line-height: 20px
+  margin-top: -10px
+  absolute top 50%
+  color #80838C
+  pointer-events: none
+  transition all 0.13s linear
+  .h40 &
+    left 10px
+    font-size: 14px
+  .h50 &
+    left 17px
+    font-family: 'PT Sans'
+    font-size: 14px
+
+
+.icon
+.activeIcon
+  cursor: pointer
+  font-size: 18px
+  color #B4B7BF
+  .h40 &
+    line-height: 40px
+  .h50 &
+    line-height: 50px
+
+.icon
+  margin-right: 12px
+  pointer-events none
+
+
+.activeIcons
+  padding-right: 12px
+  font-size: 0
+
+.activeIcon
+  margin-left: 14px
+  cursor: pointer
+  display-inline-block()
+  &:first-child
+    margin-left: 0
+  &:hover
+    color #838896

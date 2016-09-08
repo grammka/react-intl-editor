@@ -1,21 +1,91 @@
 [
   {
-    "id": "notifications.templates.users_like_video",
-    "defaultMessage": "{user} and {more} likes the video {videoName}",
+    "id": "app.containers.Watch.VideoContainer.ProgramGuide.Item.time",
+    "defaultMessage": "{start, time, short} - {end, time, short}",
     "message": ""
   },
   {
-    "id": "notifications.templates.users_like_video.more",
-    "defaultMessage": "{count} more",
+    "id": "app.components.SearchOverlay.inputPlaceholder",
+    "defaultMessage": "Type smth... (minimum 3 symbols)",
     "message": ""
   },
   {
-    "id": "app.components.CoverEditor.save",
-    "defaultMessage": "Save",
+    "id": "app.components.SearchOverlay.submitButton",
+    "defaultMessage": "Search",
     "message": ""
   },
   {
-    "id": "app.components.CoverEditor.cancel",
+    "id": "app.components.SearchOverlay.all",
+    "defaultMessage": "All",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.videosTitle",
+    "defaultMessage": "Videos",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.channelsTitle",
+    "defaultMessage": "Channels",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.usersTitle",
+    "defaultMessage": "Users",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.tooSmallQuery",
+    "defaultMessage": "To start search write minimum 3 symbols",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.noResults",
+    "defaultMessage": "No results",
+    "message": ""
+  },
+  {
+    "id": "app.components.SearchOverlay.showMore",
+    "defaultMessage": "show more",
+    "message": ""
+  },
+  {
+    "id": "app.components.SocialLinks.label",
+    "defaultMessage": "Social networks",
+    "message": ""
+  },
+  {
+    "id": "app.components.SubscribeToggle.subscribe",
+    "defaultMessage": "Subscribe",
+    "message": ""
+  },
+  {
+    "id": "app.components.SubscribeToggle.subscribed",
+    "defaultMessage": "Already subscribed",
+    "message": ""
+  },
+  {
+    "id": "app.components.SubscribeToggle.cancel",
+    "defaultMessage": "Cancel",
+    "message": ""
+  },
+  {
+    "id": "app.components.UserCard.Common.sendMessage",
+    "defaultMessage": "Message",
+    "message": ""
+  },
+  {
+    "id": "app.components.UserCard.Request.Income.accept",
+    "defaultMessage": "Accept",
+    "message": ""
+  },
+  {
+    "id": "app.components.UserCard.Request.Income.reject",
+    "defaultMessage": "Reject",
+    "message": ""
+  },
+  {
+    "id": "app.components.UserCard.Request.Outcome.cancelRequest",
     "defaultMessage": "Cancel",
     "message": ""
   }
